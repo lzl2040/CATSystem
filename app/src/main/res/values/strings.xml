@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CATSystem</string>
+    <string name="username_hint">请输入用户名/电话号码</string>
+    <string name="pwd_hint">请输入密码</string>
 </resources>

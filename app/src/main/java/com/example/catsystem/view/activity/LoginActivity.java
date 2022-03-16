@@ -3,7 +3,7 @@ package com.example.catsystem.view.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
+import com.example.catsystem.R;
 public class LoginActivity extends AppCompatActivity {
 
     @Override
