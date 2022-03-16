@@ -13,7 +13,7 @@
         android:layout_height="@dimen/login_top_bar_height">
         <TextView
             android:textSize="@dimen/font_20"
-            android:text="用户登录"
+            android:text="@string/login_title"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp">
             <EditText
-                android:hint="@string/username_hint"
+                android:hint="@string/username_phone_hint"
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"/>

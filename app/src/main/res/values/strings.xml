@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">CATSystem</string>
-    <string name="username_hint">请输入用户名/电话号码</string>
+    <string name="username_phone_hint">请输入用户名/电话号码</string>
     <string name="pwd_hint">请输入密码</string>
+    <string name="rpwd_hint">请再次输入密码</string>
+    <string name="phone_hint">请输入电话号码</string>
+    <string name="username_hint">请输入用户名</string>
+    <string name="code_hint">请输入验证码</string>
+    <string name="login_title">用户登录</string>
+    <string name="register_title">用户注册</string>
+    <string name="get_code">获得验证码</string>
+    <string name="already_agree">已阅读并同意</string>
+    <string name="user_agreement">用户协议</string>
 </resources>
