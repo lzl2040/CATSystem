@@ -126,6 +126,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"/>
             <Button
+                android:id="@+id/get_code"
                 android:layout_marginTop="@dimen/margin_10"
                 android:layout_marginBottom="@dimen/margin_10"
                 android:textColor="@color/white"
@@ -161,7 +162,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp">
             <CheckBox
-                android:id="@+id/checkbox"
+                android:id="@+id/checkBox"
                 android:layout_width="@dimen/register_checkbox_size"
                 android:layout_height="@dimen/register_checkbox_size"/>
             <TextView
