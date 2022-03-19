@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.example.catsystem.R;
 import com.example.catsystem.base.BaseFragment;
+import com.example.catsystem.util.ViewUtil;
+import com.example.catsystem.view.activity.ErrorSetsActivity;
 
 public class MyFragment extends BaseFragment {
     private RelativeLayout errorSets,studyData,aboutUs;
@@ -42,6 +44,7 @@ public class MyFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        Log.e(TAG,"onCreateView...");
         View view = inflater.inflate(R.layout.fragment_my, container, false);
         initView(view);
         setListener();
@@ -70,7 +73,7 @@ public class MyFragment extends BaseFragment {
         errorSets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ViewUtil.jumpTo(getActivity(), ErrorSetsActivity.class);
             }
         });
 
@@ -113,5 +116,6 @@ public class MyFragment extends BaseFragment {
 
             }
         });
+
     }
 }

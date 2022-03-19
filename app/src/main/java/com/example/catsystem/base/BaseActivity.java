@@ -37,4 +37,11 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * 设置适配器
+     */
+    public void setAdapter(){
+
+    }
+
 }

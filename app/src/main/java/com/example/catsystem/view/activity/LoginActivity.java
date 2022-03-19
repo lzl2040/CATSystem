@@ -22,6 +22,9 @@ import com.example.catsystem.base.BaseActivity;
 import com.example.catsystem.util.EditTextWatcherImp;
 import com.example.catsystem.util.ViewUtil;
 
+/**
+ * 登录界面
+ */
 public class LoginActivity extends BaseActivity {
     private EditText usernameEdt,pwdEdt;
     private ImageView clearNameImg,clearPwdImg;
@@ -35,7 +38,7 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        Log.e(TAG,"onCreate...");
         initView();
         setListener();
     }
@@ -43,8 +46,8 @@ public class LoginActivity extends BaseActivity {
     @Override
     public void initView() {
 //        super.initView();
-        context = this;
         Log.e(TAG,"initView....");
+        context = this;
         usernameEdt = findViewById(R.id.username);
         pwdEdt = findViewById(R.id.pwd);
         clearNameImg = findViewById(R.id.clear_username);
@@ -89,7 +92,6 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 ViewUtil.jumpTo(context,RegisterActivity.class);
-                finish();
             }
         });
 

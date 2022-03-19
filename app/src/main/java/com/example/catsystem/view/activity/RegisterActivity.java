@@ -18,6 +18,9 @@ import com.example.catsystem.base.BaseActivity;
 import com.example.catsystem.util.EditTextWatcherImp;
 import com.example.catsystem.util.ViewUtil;
 
+/**
+ * 注册界面
+ */
 public class RegisterActivity extends BaseActivity {
     private EditText phoneEdt,nameEdt,pwdEdt,rpwdEdt,codeEdt;
     private Button getCodeBtn,registerBtn;
@@ -30,6 +33,7 @@ public class RegisterActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        Log.e(TAG,"onCreate...");
         initView();
         setListener();
     }
