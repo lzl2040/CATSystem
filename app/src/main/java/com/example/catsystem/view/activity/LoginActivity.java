@@ -122,5 +122,21 @@ public class LoginActivity extends BaseActivity {
                 pwdEdt.setSelection(pwdEdt.getText().length());
             }
         });
+
+        //设置清除用户名/电话号码的监听
+        clearNameImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                usernameEdt.setText(R.string.blank);
+            }
+        });
+
+        //设置清除密码的监听
+        clearPwdImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pwdEdt.setText(R.string.blank);
+            }
+        });
     }
 }
