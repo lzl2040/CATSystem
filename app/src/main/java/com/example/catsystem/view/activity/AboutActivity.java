@@ -6,6 +6,9 @@ import android.os.Bundle;
 import com.example.catsystem.R;
 import com.example.catsystem.base.BaseActivity;
 
+/**
+ * 关于我们的界面
+ */
 public class AboutActivity extends BaseActivity {
     private String TAG = "AboutActivity";
     @Override

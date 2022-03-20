@@ -3,6 +3,7 @@ package com.example.catsystem.view.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -59,6 +60,10 @@ public class ChooseSubjectActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Log.e(TAG,"选择了:"+subjects[i]);
+                Intent intent = new Intent(context,AnswerActivity.class);
+                intent.putExtra("selectSubject",i);
+                startActivity(intent);
+                //finish();
             }
         });
 

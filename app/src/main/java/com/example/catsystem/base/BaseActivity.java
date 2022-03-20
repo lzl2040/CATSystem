@@ -44,4 +44,18 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * 往适配器添加数据
+     */
+    public void addData(){
+
+    }
+
+    /**
+     * 获得数据
+     */
+    public void getData(){
+
+    }
+
 }

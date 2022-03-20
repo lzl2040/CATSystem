@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/answer_question"
+                android:text="@string/answer_result"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_15" />
         </RelativeLayout>
@@ -57,8 +57,8 @@
                 android:layout_marginBottom="@dimen/margin_10"
                 android:background="@drawable/submit_btn"
                 android:textSize="@dimen/test_submit_btn_text_size"
-                android:text="@string/submit"
-                android:id="@+id/submit_btn"
+                android:text="@string/test_data"
+                android:id="@+id/test_data_btn"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"/>
         </LinearLayout>

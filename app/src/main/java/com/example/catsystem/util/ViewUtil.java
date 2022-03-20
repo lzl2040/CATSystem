@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 /**
  * 各种view的工具类
@@ -42,5 +43,14 @@ public class ViewUtil {
     public static void jumpTo(Context context, Class cls){
         Intent intent = new Intent(context,cls);
         context.startActivity(intent);
+    }
+
+    /**
+     * 提示消息
+     * @param msg 消息内容
+     * @param context 上下文
+     */
+    public static void showNotice(String msg,Context context){
+        Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
     }
 }
