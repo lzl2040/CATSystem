@@ -74,6 +74,7 @@ public class AnswerActivity extends BaseActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.e(TAG,"click:submitBtn");
                 boolean isAllSeleted = checkAllQuestionSelected();
                 if(isAllSeleted){
                     ViewUtil.jumpTo(context,AnswerResultActivity.class);

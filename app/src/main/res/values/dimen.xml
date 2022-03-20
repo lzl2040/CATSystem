@@ -59,4 +59,7 @@
     <dimen name="item_question_result_icon_size">24dp</dimen>
     <dimen name="item_question_result_text_size">@dimen/font_15</dimen>
     <dimen name="item_question_explain_text_size">@dimen/font_15</dimen>
+    <dimen name="item_question_radiobtn_interval">10dp</dimen>
+<!--    选择答案时的选择按钮-->
+    <dimen name="select_btn_size">20dp</dimen>
 </resources>

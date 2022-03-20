@@ -20,24 +20,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RadioButton
+            android:layout_marginBottom="@dimen/margin_10"
+            android:drawablePadding="@dimen/item_question_radiobtn_interval"
+            android:button="@null"
+            android:drawableLeft="@drawable/question_checked"
             android:text="A.你好呀"
             android:textSize="@dimen/item_question_choice_size"
             android:id="@+id/choice_A"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <RadioButton
+            android:layout_marginBottom="@dimen/margin_10"
+            android:drawablePadding="@dimen/item_question_radiobtn_interval"
+            android:button="@null"
+            android:drawableLeft="@drawable/question_checked"
             android:text="A.你好呀"
             android:textSize="@dimen/item_question_choice_size"
             android:id="@+id/choice_B"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <RadioButton
+            android:layout_marginBottom="@dimen/margin_10"
+            android:drawablePadding="@dimen/item_question_radiobtn_interval"
+            android:button="@null"
+            android:drawableLeft="@drawable/question_checked"
             android:text="A.你好呀"
             android:textSize="@dimen/item_question_choice_size"
             android:id="@+id/choice_C"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <RadioButton
+            android:drawablePadding="@dimen/item_question_radiobtn_interval"
+            android:button="@null"
+            android:drawableLeft="@drawable/question_checked"
             android:text="A.你好呀"
             android:textSize="@dimen/item_question_choice_size"
             android:id="@+id/choice_D"

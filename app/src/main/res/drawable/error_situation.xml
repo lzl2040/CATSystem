@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <!-- 圆形-->
+        <shape android:shape="oval">
+            <!-- 圆形大小-->
+            <size
+                android:width="@dimen/select_btn_size"
+                android:height="@dimen/select_btn_size" />
+            <!-- 圆形内部颜色-->
+            <solid android:color="@color/orangered" />
+            <!-- 圆形外部框颜色-->
+            <stroke
+                android:width="2dp"
+                android:color="@color/orangered" />
+        </shape>
+    </item>
+    <item>
+        <!-- 圆环-->
+        <shape
+            android:innerRadiusRatio="3.5"
+            android:shape="ring"
+            android:thicknessRatio="7"
+            android:useLevel="false">
+            <!-- 圆环大小-->
+            <size
+                android:width="@dimen/select_btn_size"
+                android:height="@dimen/select_btn_size" />
+            <!-- 圆环的环颜色-->
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+</layer-list>

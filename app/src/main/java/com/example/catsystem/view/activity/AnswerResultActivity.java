@@ -13,6 +13,7 @@ import android.widget.Button;
 import com.example.catsystem.R;
 import com.example.catsystem.base.BaseActivity;
 import com.example.catsystem.entity.Question;
+import com.example.catsystem.util.StaticData;
 import com.example.catsystem.view.adapter.QuestionResultAdapter;
 
 import java.util.ArrayList;
@@ -82,5 +83,6 @@ public class AnswerResultActivity extends BaseActivity {
     public void getData() {
         //super.getData();
         Log.e(TAG,"getData...");
+        data = StaticData.getQuestions();
     }
 }
