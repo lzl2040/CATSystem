@@ -1,6 +1,5 @@
-package com.example.catsystem.view.activity;
+package com.example.catsystem.views.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
@@ -11,12 +10,14 @@ import android.widget.ImageView;
 
 import com.example.catsystem.R;
 import com.example.catsystem.base.BaseActivity;
+import com.example.catsystem.presenter.ErrorSetsPresenter;
 import com.example.catsystem.util.ViewUtil;
+import com.example.catsystem.views.view.IErrorSetsView;
 
 /**
  * 错题集
  */
-public class ErrorSetsActivity extends BaseActivity {
+public class ErrorSetsActivity extends BaseActivity<ErrorSetsPresenter, IErrorSetsView> {
     private String TAG = "ErrorSetsActivity";
     private RecyclerView recyclerView;
     private ImageView backImg;
@@ -29,6 +30,11 @@ public class ErrorSetsActivity extends BaseActivity {
         initView();
         setListener();
         setAdapter();
+    }
+
+    @Override
+    public ErrorSetsPresenter createPresenter() {
+        return new ErrorSetsPresenter();
     }
 
     @Override

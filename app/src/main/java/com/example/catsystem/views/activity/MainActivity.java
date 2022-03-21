@@ -1,7 +1,6 @@
-package com.example.catsystem.view.activity;
+package com.example.catsystem.views.activity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,19 +11,21 @@ import android.view.MenuItem;
 
 import com.example.catsystem.R;
 import com.example.catsystem.base.BaseActivity;
+import com.example.catsystem.presenter.MainPresenter;
 import com.example.catsystem.util.StaticData;
 import com.example.catsystem.util.ViewUtil;
-import com.example.catsystem.view.fragment.MyFragment;
-import com.example.catsystem.view.fragment.TestFragment;
+import com.example.catsystem.views.fragment.MyFragment;
+import com.example.catsystem.views.fragment.TestFragment;
+import com.example.catsystem.views.view.IMainView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 主界面
  */
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity<MainPresenter, IMainView> {
     private String TAG = ViewUtil.getClassName(this);
     private BottomNavigationView bottomNavigationView;
     //fragment管理器
@@ -48,6 +49,11 @@ public class MainActivity extends BaseActivity {
         initView();
         initFragment();
         setListener();
+    }
+
+    @Override
+    public MainPresenter createPresenter() {
+        return new MainPresenter();
     }
 
     @Override

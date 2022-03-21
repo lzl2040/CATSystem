@@ -14,7 +14,11 @@ public class StaticData {
     private static int bottomPosition = 0;
     //抽取的测试题目
     private static List<Question> questions;
-    //做正确的个数
+    /**
+     * 后端接口使用的url
+     */
+    private static String baseUrl = "";
+    private static String register = "";
 
     public static int getBottomPosition() {
         return bottomPosition;
@@ -34,5 +38,13 @@ public class StaticData {
 
     public static void updateQuestion(int position,String answer){
         questions.get(position).setUserAnswer(answer);
+    }
+
+    public static String getBaseUrl() {
+        return baseUrl;
+    }
+
+    public static String getRegister() {
+        return register;
     }
 }

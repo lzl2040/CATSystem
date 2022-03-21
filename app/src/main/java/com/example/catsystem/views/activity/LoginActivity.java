@@ -1,9 +1,6 @@
-package com.example.catsystem.view.activity;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.catsystem.views.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,7 +11,6 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -23,13 +19,14 @@ import android.widget.TextView;
 
 import com.example.catsystem.R;
 import com.example.catsystem.base.BaseActivity;
+import com.example.catsystem.presenter.LoginPresenter;
 import com.example.catsystem.privacy.OnDialogListener;
 import com.example.catsystem.privacy.PrivacyDialog;
 import com.example.catsystem.util.Constant;
-import com.example.catsystem.util.DemoResHelper;
 import com.example.catsystem.util.DemoSpHelper;
 import com.example.catsystem.util.EditTextWatcherImp;
 import com.example.catsystem.util.ViewUtil;
+import com.example.catsystem.views.view.ILoginView;
 import com.mob.MobSDK;
 import com.mob.OperationCallback;
 
@@ -38,7 +35,7 @@ import java.util.ArrayList;
 /**
  * 登录界面
  */
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity<LoginPresenter, ILoginView> implements ILoginView{
     private EditText usernameEdt,pwdEdt;
     private ImageView clearNameImg,clearPwdImg;
     private CheckBox showPwd;
@@ -55,6 +52,11 @@ public class LoginActivity extends BaseActivity {
         initView();
         initSMSSDK();
         setListener();
+    }
+
+    @Override
+    public LoginPresenter createPresenter() {
+        return new LoginPresenter();
     }
 
     @Override
@@ -258,4 +260,13 @@ public class LoginActivity extends BaseActivity {
         });
     }
 
+    @Override
+    public void showErrorMessage(String msg, Context context) {
+
+    }
+
+    @Override
+    public void showSuccessMessage(String msg, Context context) {
+
+    }
 }

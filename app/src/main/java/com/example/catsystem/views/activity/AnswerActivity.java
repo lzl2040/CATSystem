@@ -1,6 +1,5 @@
-package com.example.catsystem.view.activity;
+package com.example.catsystem.views.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,12 +13,13 @@ import android.widget.ImageView;
 
 import com.example.catsystem.R;
 import com.example.catsystem.base.BaseActivity;
-import com.example.catsystem.controller.ActivityController;
 import com.example.catsystem.entity.Question;
+import com.example.catsystem.presenter.AnswerPresenter;
 import com.example.catsystem.util.Constant;
 import com.example.catsystem.util.StaticData;
 import com.example.catsystem.util.ViewUtil;
-import com.example.catsystem.view.adapter.QuestionAdapter;
+import com.example.catsystem.views.adapter.QuestionAdapter;
+import com.example.catsystem.views.view.IAnswerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * 回答界面
  */
-public class AnswerActivity extends BaseActivity {
+public class AnswerActivity extends BaseActivity<AnswerPresenter, IAnswerView> {
     private String TAG = "AnswerActivity";
     private RecyclerView recyclerView;
     private ImageView backImg;
@@ -45,6 +45,11 @@ public class AnswerActivity extends BaseActivity {
         initView();
         setListener();
         setAdapter();
+    }
+
+    @Override
+    public AnswerPresenter createPresenter() {
+        return new AnswerPresenter();
     }
 
     @Override

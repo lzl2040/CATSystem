@@ -1,4 +1,4 @@
-package com.example.catsystem.view.adapter;
+package com.example.catsystem.views.adapter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.catsystem.R;
 import com.example.catsystem.entity.Question;
-import com.example.catsystem.util.StaticData;
 
 import java.util.List;
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.activity.RegisterActivity">
+    tools:context=".views.activity.RegisterActivity">
     <RelativeLayout
         android:background="@color/deepskyblue"
         android:layout_width="match_parent"

@@ -14,4 +14,6 @@ public class Constant {
     final public static String appSecretKey = "34d67b6d9a0dbd714201b646ac2f8733";
     //电话号码长度
     final public static int PHONE_LEN = 11;
+    //网络操作的延时时间
+    final public static int NETWORK_INTERVAL = 2000;
 }

@@ -1,6 +1,5 @@
-package com.example.catsystem.view.activity;
+package com.example.catsystem.views.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,8 +12,10 @@ import android.widget.Button;
 import com.example.catsystem.R;
 import com.example.catsystem.base.BaseActivity;
 import com.example.catsystem.entity.Question;
+import com.example.catsystem.presenter.AnswerResultPresenter;
 import com.example.catsystem.util.StaticData;
-import com.example.catsystem.view.adapter.QuestionResultAdapter;
+import com.example.catsystem.views.adapter.QuestionResultAdapter;
+import com.example.catsystem.views.view.IAnswerResultView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
 /**
  * 测试结果的界面
  */
-public class AnswerResultActivity extends BaseActivity {
+public class AnswerResultActivity extends BaseActivity<AnswerResultPresenter, IAnswerResultView> {
     private String TAG = "AnswerResultActivity";
     private List<Question> data = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -36,6 +37,11 @@ public class AnswerResultActivity extends BaseActivity {
         initView();
         setListener();
         setAdapter();
+    }
+
+    @Override
+    public AnswerResultPresenter createPresenter() {
+        return new AnswerResultPresenter();
     }
 
     @Override

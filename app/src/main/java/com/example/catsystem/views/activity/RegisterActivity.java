@@ -1,7 +1,6 @@
-package com.example.catsystem.view.activity;
+package com.example.catsystem.views.activity;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,13 +15,14 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.catsystem.R;
 import com.example.catsystem.base.BaseActivity;
+import com.example.catsystem.presenter.RegisterPresenter;
 import com.example.catsystem.util.CheckUtil;
 import com.example.catsystem.util.EditTextWatcherImp;
 import com.example.catsystem.util.ViewUtil;
+import com.example.catsystem.views.view.IRegisterView;
 import com.mob.tools.utils.SharePrefrenceHelper;
 
 import cn.smssdk.EventHandler;
@@ -32,7 +32,7 @@ import cn.smssdk.UserInterruptException;
 /**
  * 注册界面
  */
-public class RegisterActivity extends BaseActivity {
+public class RegisterActivity extends BaseActivity<RegisterPresenter,IRegisterView> implements IRegisterView {
     private EditText phoneEdt,nameEdt,pwdEdt,rpwdEdt,codeEdt;
     private Button getCodeBtn,registerBtn;
     private CheckBox checkBox;
@@ -49,6 +49,7 @@ public class RegisterActivity extends BaseActivity {
     private static final int COUNTDOWN = 60;
     private static final String KEY_START_TIME = "start_time";
     private static final String TEMP_CODE = "1319972";
+    //用作倒计时的句柄
     private Handler handler;
 
     @Override
@@ -74,6 +75,12 @@ public class RegisterActivity extends BaseActivity {
         getHelper();
         setListener();
         getVertifyCode();
+        Log.e(TAG,presenter+"");
+    }
+
+    @Override
+    public RegisterPresenter createPresenter() {
+        return new RegisterPresenter();
     }
 
     @Override
@@ -315,5 +322,25 @@ public class RegisterActivity extends BaseActivity {
     public void getVertifyCode(){
         setVertifyCodeCountDown();
         registerEventHandler();
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void showErrorMessage(String msg, Context context) {
+
+    }
+
+    @Override
+    public void showSuccessMessage(String msg, Context context) {
+
     }
 }

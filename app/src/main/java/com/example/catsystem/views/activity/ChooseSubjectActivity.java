@@ -1,6 +1,4 @@
-package com.example.catsystem.view.activity;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.catsystem.views.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,8 +12,10 @@ import android.widget.ImageView;
 import com.example.catsystem.R;
 import com.example.catsystem.base.BaseActivity;
 import com.example.catsystem.entity.Subject;
+import com.example.catsystem.presenter.ChooseSubjectPresenter;
 import com.example.catsystem.util.ViewUtil;
-import com.example.catsystem.view.adapter.SubjectAdapter;
+import com.example.catsystem.views.adapter.SubjectAdapter;
+import com.example.catsystem.views.view.IChooseSubjectView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * 选择科目界面
  */
-public class ChooseSubjectActivity extends BaseActivity {
+public class ChooseSubjectActivity extends BaseActivity<ChooseSubjectPresenter, IChooseSubjectView> {
     private String TAG = "ChooseSubjectActivity";
     private GridView subjectGrid;
     private ImageView backImg;
@@ -40,6 +40,11 @@ public class ChooseSubjectActivity extends BaseActivity {
         initView();
         setListener();
         setAdapter();
+    }
+
+    @Override
+    public ChooseSubjectPresenter createPresenter() {
+        return new ChooseSubjectPresenter();
     }
 
     @Override

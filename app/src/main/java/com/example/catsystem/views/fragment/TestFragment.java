@@ -1,8 +1,6 @@
-package com.example.catsystem.view.fragment;
+package com.example.catsystem.views.fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,7 +12,7 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.example.catsystem.R;
 import com.example.catsystem.base.BaseFragment;
 import com.example.catsystem.util.ViewUtil;
-import com.example.catsystem.view.activity.ChooseSubjectActivity;
+import com.example.catsystem.views.activity.ChooseSubjectActivity;
 
 public class TestFragment extends BaseFragment {
     private String TAG = "TestFragment";
