@@ -3,18 +3,28 @@ package com.example.catsystem.util;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.mob.tools.utils.ResHelper;
+import com.example.catsystem.R;
+
+import org.json.JSONObject;
 
 /**
  * 各种view的工具类
  */
 public class ViewUtil {
-
+    private static String TAG = "ViewUtil";
     /**
-     * 设置清除按钮的显示问题
+     * 设置清除按钮的显示情况
      * @param editText 输入框
      * @param clear 对应输入框的清除按钮
      */
@@ -52,5 +62,51 @@ public class ViewUtil {
      */
     public static void showNotice(String msg,Context context){
         Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * 显示错误信息
+     * @param msg 错误信息
+     * @param context 上下文
+     */
+    public static void showErrorToast(String msg,Context context){
+        Toast toast = new Toast(context);
+        View rootView = LayoutInflater.from(context).inflate(R.layout.error_toast_layout, null);
+        TextView tvToast = rootView.findViewById(R.id.tvToast);
+        toast.setView(rootView);
+        toast.setGravity(Gravity.CENTER, 0, ResHelper.dipToPx(context, -100));
+        tvToast.setText(msg);
+        toast.show();
+    }
+
+    /**
+     * 网络出问题时使用
+     * @param data
+     * @param context
+     */
+    public static void processError(Object data,Context context) {
+        Log.d(TAG,"processError...");
+        int status = 0;
+        // 根据服务器返回的网络错误，给toast提示
+        try {
+            ((Throwable) data).printStackTrace();
+            Throwable throwable = (Throwable) data;
+
+            JSONObject object = new JSONObject(
+                    throwable.getMessage());
+            String des = object.optString("detail");
+            status = object.optInt("status");
+            if (!TextUtils.isEmpty(des)) {
+                showErrorToast(des, context);
+                return;
+            }
+        } catch (Exception e) {
+            Log.w(TAG, "", e);
+        }
+        // 如果木有找到资源，默认提示
+        int resId = DemoResHelper.getStringRes(context.getApplicationContext(),
+                "network_error");
+        String netErrMsg = context.getApplicationContext().getResources().getString(resId);
+        showErrorToast(netErrMsg, context);
     }
 }

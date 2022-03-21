@@ -14,6 +14,7 @@ public class StaticData {
     private static int bottomPosition = 0;
     //抽取的测试题目
     private static List<Question> questions;
+    //做正确的个数
 
     public static int getBottomPosition() {
         return bottomPosition;
