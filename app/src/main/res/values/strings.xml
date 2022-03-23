@@ -37,13 +37,22 @@
 
 <!--    错误信息提示-->
     <string name="null_phone">电话号码不能为空!</string>
-    <string name="phone_length">电话号码不能为空!</string>
+    <string name="phone_length">电话号码长度为11位!</string>
     <string name="busy_hint">操作繁忙,请稍等!</string>
     <string name="network_error">网络未连接!</string>
     <string name="login_fail">登录失败</string>
+    <string name="login_sucess">登录成功</string>
     <string name="register_fail">注册失败</string>
     <string name="register_sucess">注册成功</string>
     <string name="has_quesion_no_select">请完成给定所有题目!</string>
+    <string name="repeat_rpwd_error">两次密码不一致</string>
+    <string name="pwd_length_error">密码长度在8-15个字符之间</string>
+    <string name="name_length_error">用户名不能少于5个字符</string>
+    <string name="name_null_warning">用户名不能为空</string>
+    <string name="pwd_null_warning">密码不能为空</string>
+    <string name="phone_has_register">该电话号码已被注册</string>
+    <string name="vertify_code_error">验证码错误</string>
+    <string name="determine_agreement">请勾选用户协议</string>
 
     <!-- smssdk隐私协议弹框 -->
     <string name="smsdemo_authorize_dialog_title">服务授权</string>

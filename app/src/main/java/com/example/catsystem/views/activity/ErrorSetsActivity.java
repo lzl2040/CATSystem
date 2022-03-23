@@ -17,7 +17,7 @@ import com.example.catsystem.views.view.IErrorSetsView;
 /**
  * 错题集
  */
-public class ErrorSetsActivity extends BaseActivity<ErrorSetsPresenter, IErrorSetsView> {
+public class ErrorSetsActivity extends BaseActivity<ErrorSetsPresenter, IErrorSetsView> implements IErrorSetsView{
     private String TAG = "ErrorSetsActivity";
     private RecyclerView recyclerView;
     private ImageView backImg;
@@ -63,5 +63,15 @@ public class ErrorSetsActivity extends BaseActivity<ErrorSetsPresenter, IErrorSe
     public void setAdapter() {
         //super.setAdapter();
         Log.e(TAG,"initView...");
+    }
+
+    @Override
+    public void showErrorMessage(String msg, Context context) {
+
+    }
+
+    @Override
+    public void showSuccessMessage(String msg, Context context) {
+
     }
 }

@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * 选择科目界面
  */
-public class ChooseSubjectActivity extends BaseActivity<ChooseSubjectPresenter, IChooseSubjectView> {
+public class ChooseSubjectActivity extends BaseActivity<ChooseSubjectPresenter, IChooseSubjectView> implements IChooseSubjectView{
     private String TAG = "ChooseSubjectActivity";
     private GridView subjectGrid;
     private ImageView backImg;
@@ -99,5 +99,15 @@ public class ChooseSubjectActivity extends BaseActivity<ChooseSubjectPresenter, 
             Subject subject = new Subject(subjects[i],subjectImgIds[i]);
             data.add(subject);
         }
+    }
+
+    @Override
+    public void showErrorMessage(String msg, Context context) {
+
+    }
+
+    @Override
+    public void showSuccessMessage(String msg, Context context) {
+
     }
 }

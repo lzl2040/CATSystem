@@ -1,6 +1,7 @@
 package com.example.catsystem.util;
 
 import com.example.catsystem.entity.Question;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -14,11 +15,14 @@ public class StaticData {
     private static int bottomPosition = 0;
     //抽取的测试题目
     private static List<Question> questions;
+    //Gson
+    private static Gson gson;
     /**
      * 后端接口使用的url
      */
-    private static String baseUrl = "";
-    private static String register = "";
+    private static String baseUrl = "http://192.168.43.167:8080/CATSystem";
+    private static String register = "/user/register";
+    private static String login = "/user/login";
 
     public static int getBottomPosition() {
         return bottomPosition;
@@ -46,5 +50,16 @@ public class StaticData {
 
     public static String getRegister() {
         return register;
+    }
+
+    public static Gson getGson() {
+        if(gson == null){
+            gson = new Gson();
+        }
+        return gson;
+    }
+
+    public static String getLogin() {
+        return login;
     }
 }

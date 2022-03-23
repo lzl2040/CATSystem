@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * 回答界面
  */
-public class AnswerActivity extends BaseActivity<AnswerPresenter, IAnswerView> {
+public class AnswerActivity extends BaseActivity<AnswerPresenter, IAnswerView> implements IAnswerView {
     private String TAG = "AnswerActivity";
     private RecyclerView recyclerView;
     private ImageView backImg;
@@ -145,5 +145,15 @@ public class AnswerActivity extends BaseActivity<AnswerPresenter, IAnswerView> {
             }
         }
         return true;
+    }
+
+    @Override
+    public void showErrorMessage(String msg, Context context) {
+
+    }
+
+    @Override
+    public void showSuccessMessage(String msg, Context context) {
+
     }
 }

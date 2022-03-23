@@ -6,8 +6,6 @@ package com.example.catsystem.entity;
  * 用户的实体类
  */
 public class User {
-    //用户编号
-    private Integer userId;
     //用户名
     private String name;
     //用户密码
@@ -15,12 +13,10 @@ public class User {
     //电话号码
     private String phone;
 
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public User(String name, String pwd, String phone) {
+        this.name = name;
+        this.pwd = pwd;
+        this.phone = phone;
     }
 
     public String getName() {

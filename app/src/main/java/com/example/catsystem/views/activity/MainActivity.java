@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -25,7 +26,7 @@ import java.util.Map;
 /**
  * 主界面
  */
-public class MainActivity extends BaseActivity<MainPresenter, IMainView> {
+public class MainActivity extends BaseActivity<MainPresenter, IMainView> implements IMainView{
     private String TAG = ViewUtil.getClassName(this);
     private BottomNavigationView bottomNavigationView;
     //fragment管理器
@@ -125,5 +126,15 @@ public class MainActivity extends BaseActivity<MainPresenter, IMainView> {
         preFragment=nowFragment;
         fragmentTransaction.commitAllowingStateLoss();
         return true;
+    }
+
+    @Override
+    public void showErrorMessage(String msg, Context context) {
+
+    }
+
+    @Override
+    public void showSuccessMessage(String msg, Context context) {
+
     }
 }

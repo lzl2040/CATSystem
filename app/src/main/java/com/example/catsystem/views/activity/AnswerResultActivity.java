@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * 测试结果的界面
  */
-public class AnswerResultActivity extends BaseActivity<AnswerResultPresenter, IAnswerResultView> {
+public class AnswerResultActivity extends BaseActivity<AnswerResultPresenter, IAnswerResultView> implements IAnswerResultView{
     private String TAG = "AnswerResultActivity";
     private List<Question> data = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -90,5 +90,15 @@ public class AnswerResultActivity extends BaseActivity<AnswerResultPresenter, IA
         //super.getData();
         Log.e(TAG,"getData...");
         data = StaticData.getQuestions();
+    }
+
+    @Override
+    public void showErrorMessage(String msg, Context context) {
+
+    }
+
+    @Override
+    public void showSuccessMessage(String msg, Context context) {
+
     }
 }

@@ -3,6 +3,7 @@ package com.example.catsystem.util;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.view.View;
 
 import com.example.catsystem.R;
 
@@ -21,10 +22,10 @@ public class CheckUtil {
      */
     public static boolean checkPhoneValid(String phone, Context context){
         if(phone == null | phone.equals("")){
-            ViewUtil.showNotice(context.getString(R.string.null_phone),context);
+            ViewUtil.showErrorToast(context.getString(R.string.null_phone),context);
             return false;
         }else if(phone.length() != Constant.PHONE_LEN){
-            ViewUtil.showNotice(context.getString(R.string.phone_length),context);
+            ViewUtil.showErrorToast(context.getString(R.string.phone_length),context);
             return false;
         }else {
             return true;
@@ -39,6 +40,55 @@ public class CheckUtil {
         ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 检查用户名长度
+     * @param username
+     * @return 用户名长度小于5返回false
+     */
+    public static boolean checkNameLength(String username,Context context){
+        if(username.length() < 5){
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 检查文本是否为空
+     * @param text 输入的文本
+     * @return 为空返回true,否则返回false
+     */
+    public static boolean checkTextIsNull(String text){
+        if(text.equals("") || text == null){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 检查密码长度
+     * @param pwd 密码
+     * @return 长度满足返回true
+     */
+    public static boolean checkPwdLength(String pwd,Context context){
+        if(pwd.length() >= 8 && pwd.length() <= 15){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 检查两次密码是否一致
+     * @param pwd 原密码
+     * @param rpwd 重复密码
+     * @return
+     */
+    public static boolean checkRepeatPwdSameAsPwd(String pwd,String rpwd){
+        if(pwd.equals(rpwd)){
             return true;
         }
         return false;

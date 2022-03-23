@@ -1,5 +1,6 @@
 package com.example.catsystem.model;
 
+import android.content.Context;
 import android.os.AsyncTask;
 
 import com.example.catsystem.entity.User;
@@ -9,10 +10,10 @@ import com.example.catsystem.entity.User;
  * time    ： 2022/3/21
  */
 public interface IRegisterModel {
-    void register(User user,Callback callback);
+    void register(User user, Callback callback);
     //回调
     interface Callback{
         void onSucess();
-        void onFailed();
+        void onFailed(int msg_id);
     }
 }
